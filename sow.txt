@@ -11,11 +11,11 @@ Please also include a submission.py that can run your code for questions 2 and 3
 Question 1: Our Mars rover has been out collecting samples, and it 
 needs to return to the charging station as quickly as possible. 
 
-It knows that over rocky terrain it can go 2 km/h. Over sandy terrain it can go 3 km/h,
-and over smooth terrain it can go 5 km/h. 
+todo milestone: start this after Monday 10/30 lecture
 
-There are three routes it might choose from. Unfortunately, our terrain data for the three routes is incomplete,
-so we only have estimates.
+It knows that over rocky terrain it can go 2 km/h. Over sandy terrain it can go 3 km/h, and over smooth terrain it can go 5 km/h.
+
+There are three routes it might choose from. Unfortunately, our terrain data for the three routes is incomplete, so we only have estimates.
 
 Route 1 is 2 km long. There is a 20% chance it is sandy, 30% chance it is smooth, and a 50% chance it is rocky.
 
@@ -41,8 +41,11 @@ willing to wait for this information from the satellite?
 
 **(todo 5 points)** Now put this problem into ChatGPT. Is it able to solve it correctly? If not, where does it make mistakes?
 
-Part 2: Hidden Markov Models 
+Part 2: Hidden Markov Models
 
+todo milestones: check the code out immediately. Start on load and generate after Friday 10/25 lecture.
+
+complete forward by Wed 11/1. Then do Viterbi.
 (Note: this is derived from an assignment in AAAI's Model Assignments workshop)
 
 In this assignment you'll be implementing two algorithms associated with Hidden Markov Models.
@@ -105,6 +108,9 @@ You can compare your results to ambiguous_sents.tagged.obs.
 
 Problem 3: Belief networks. 
 
+todo milestones. Get pgmpy set up right away. Complete by Wed 11/1.
+
+
 For this problem, you'll be using the [pgmpy](https://pgmpy.org/) library for probabilistic inference. To begin, you'll want to install this.
 
 To start, take a look at the pgm_alarm.py file, which encodes the earthquake example from class.
@@ -144,6 +150,8 @@ P(starts | !gas, !ignition, !keyPresent) = 0.01
   
 
 **(todo Problem 4 - grad students only)**
+
+todo milestone - complete by 11/3
 
 [AINow](https://ainowinstitute.org/) is a research institute that produces policy analysis addressing the concentration of power in the tech industry.
 They have recently published a landscape report assessing the state of the AI industry and making policy rcommendations.

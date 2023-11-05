@@ -32,12 +32,19 @@ Route 3 is the best route to take.
 
 ## 1.3 Now suppose that we can use a satellite to find out whether the terrain in route 3 is smooth.  Is this helpful? What is the value of this information? Expressed differently, how long are we willing to wait for this information from the satellite?
 
+Yes, it is helpful. 
+If the terrain is smooth, then the expected time is 3.1/5 = 0.62.
+If the terrain is not smooth, then the expected time is 3.1/3 * (0.5/0.6) + 3.1/2 * (0.1/0.6) = 1.12
+
+By calculation 1.12-0.62 = 0.5, so we are willing to wait for 0.5 hours for this information from the satellite.
+
 ## 1.4 Now put this problem into ChatGPT. Is it able to solve it correctly? If not, where does it make mistakes?
-For 1.1 not correct. The main reason is it messed up all the calculations. 
+
+For 1.1 not correct. The main reason is it messed up all the calculations, but it did give a good answer structure.
 
 For 1.2, it got the right answer. While for this step, I fed GPT with my 1.1 answer, and the calculation is simple. 
-For 1.3, it just beat around the bush and didn't give a clear answer, like it just gave a long talk about Time Savings, Cost of Delay, Reliability of Satellite Data, Resource Availability. 
 
+For 1.3, at first, it just beat around the bush and didn't give a clear answer, like it just gave a long talk about Time Savings, Cost of Delay, Reliability of Satellite Data, Resource Availability. 
 
 
 #  Part 4

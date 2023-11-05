@@ -1,6 +1,24 @@
 [toc]
 
 by YaoMin(Allen) Zhang
+# Part 1
+
+Speed table, unit is km/h
+
+ Sandy | Smooth | Rocky
+ ---   | ---    | ---
+ 3 | 5 | 2
+
+
+Route | Length | Sandy | Smooth | Rocky | Expectation of time
+--- | --- | --- | --- | --- | ---
+1 | 2 | 0.2 | 0.3 | 0.5 | 2/3 * 0.2 + 2/5 * 0.3 + 2/2 * 0.5 = 0.75
+2 | 1.8 | 0.4 | 0.2 | 0.4 | 1.8/3 * 0.4 + 1.8/5 * 0.2 + 1.8/2 * 0.4 = 0.672
+3 | 3.1 | 0.5 | 0.4 | 0.1 | 3.1/3 * 0.5 + 3.1/5 * 0.4 + 3.1/2 * 0.1 = 0.95
+
+Route 2 is the best route to take.
+
+
 
 #  Part 4
 

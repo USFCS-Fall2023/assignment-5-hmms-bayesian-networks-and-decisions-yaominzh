@@ -11,7 +11,7 @@ Please also include a submission.py that can run your code for questions 2 and 3
 Question 1: Our Mars rover has been out collecting samples, and it 
 needs to return to the charging station as quickly as possible. 
 
-todo milestone: start this after Monday 10/30 lecture
+done milestone: start this after Monday 10/30 lecture
 
 It knows that over rocky terrain it can go 2 km/h. Over sandy terrain it can go 3 km/h, and over smooth terrain it can go 5 km/h.
 
@@ -23,7 +23,7 @@ Route 2 is 1.8 km long. There is a 40% chance it is sandy, a 20% chance it is sm
 
 Route 3 is 3.1 km long. There is a 50% chance it is sandy, a 40% chance it is smooth, and a 10% chance it is rocky.
 
-**(todo 10 points)** Which route should we pick? Show your work.
+**(done 10 points)** Which route should we pick? Show your work.
 
 
 We have now found out some additional information. 
@@ -32,14 +32,15 @@ Route 1 contains a crater. If the wall of the crater is intact, we can go throug
 
 Route 2 contains a bridge. If that bridge is damaged, we will need to repair it, which will add 1 hour to our time. There is a 60% chance that the bridge is out.
 
-**(todo 10 points)** Now which route should we pick? Show your work.
+**(done 10 points)** Now which route should we pick? Show your work.
 
 
-**(todo 10 points)** Now suppose that we can use a satellite to find out whether the terrain in route 3 is smooth.
+**(done 10 points)** Now suppose that we can use a satellite to find out whether the terrain in route 3 is smooth.
 Is this helpful? What is the value of this information? Expressed differently, how long are we
 willing to wait for this information from the satellite?
 
-**(todo 5 points)** Now put this problem into ChatGPT. Is it able to solve it correctly? If not, where does it make mistakes?
+**(done 5 points)** Now put this problem into ChatGPT. Is it able to solve it correctly? If not, where does it make mistakes?
+All not correct. ChatGPT came up with the solution structure of the problem, but didn't get the probabilities right, especially messed up all the calculations.
 
 Part 2: Hidden Markov Models
 

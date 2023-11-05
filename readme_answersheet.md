@@ -3,6 +3,7 @@
 by YaoMin(Allen) Zhang
 # Part 1
 
+## 1.1 Question 1
 Speed table, unit is km/h
 
  Sandy | Smooth | Rocky
@@ -10,13 +11,32 @@ Speed table, unit is km/h
  3 | 5 | 2
 
 
-Route | Length | Sandy | Smooth | Rocky | Expectation of time
---- | --- | --- | --- | --- | ---
-1 | 2 | 0.2 | 0.3 | 0.5 | 2/3 * 0.2 + 2/5 * 0.3 + 2/2 * 0.5 = 0.75
-2 | 1.8 | 0.4 | 0.2 | 0.4 | 1.8/3 * 0.4 + 1.8/5 * 0.2 + 1.8/2 * 0.4 = 0.672
-3 | 3.1 | 0.5 | 0.4 | 0.1 | 3.1/3 * 0.5 + 3.1/5 * 0.4 + 3.1/2 * 0.1 = 0.95
+Route | Length | Sandy | Smooth | Rocky | Expectation of time calulation | ET 
+--- | --- | --- | --- | --- | --- | ---
+1 | 2 | 0.2 | 0.3 | 0.5 | 2/3 * 0.2 + 2/5 * 0.3 + 2/2 * 0.5 = 0.75  | 0.75
+2 | 1.8 | 0.4 | 0.2 | 0.4 | 1.8/3 * 0.4 + 1.8/5 * 0.2 + 1.8/2 * 0.4 = 0.672 | 0.672
+3 | 3.1 | 0.5 | 0.4 | 0.1 | 3.1/3 * 0.5 + 3.1/5 * 0.4 + 3.1/2 * 0.1 = 0.95 | 0.95
 
 Route 2 is the best route to take.
+
+
+## 1.2 Question 2
+
+Route |  Expected time from step 1 | special case | New expected time
+--- | --- | --- | ---
+1 | 0.75 | 0.3 chance of add 0.75 | (0.75+0.75) * 0.3 + 0.75 * 0.7 = 0.975
+2 | 0.672 | 0.6 chance of add 1 | (0.672+1) * 0.6 + 0.672 * 0.4 = 1.272
+3 | 0.95 | no special case | 0.95
+
+Route 3 is the best route to take.
+
+## 1.3 Now suppose that we can use a satellite to find out whether the terrain in route 3 is smooth.  Is this helpful? What is the value of this information? Expressed differently, how long are we willing to wait for this information from the satellite?
+
+## 1.4 Now put this problem into ChatGPT. Is it able to solve it correctly? If not, where does it make mistakes?
+For 1.1 not correct. The main reason is it messed up all the calculations. 
+
+For 1.2, it got the right answer. While for this step, I fed GPT with my 1.1 answer, and the calculation is simple. 
+For 1.3, it just beat around the bush and didn't give a clear answer, like it just gave a long talk about Time Savings, Cost of Delay, Reliability of Satellite Data, Resource Availability. 
 
 
 

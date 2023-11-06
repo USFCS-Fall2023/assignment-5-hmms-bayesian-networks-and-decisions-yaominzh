@@ -117,7 +117,7 @@ For this problem, you'll be using the [pgmpy](https://pgmpy.org/) library for pr
 To start, take a look at the pgm_alarm.py file, which encodes the earthquake example from class.
 At the bottom is an example of how to query the network to find the probability that John calls given Earthquake. 
 
-**(todo 5 points)** 1. Modify this query to determine:
+**(done 5 points)** 1. Modify this query to determine:
 - the probability of Mary Calling given that John called
 - The probability of both John and Mary calling given Alarm
 - the probability of Alarm, given that Mary called.

@@ -10,7 +10,7 @@ alarm_model = BayesianNetwork(
     ]
 )
 
-# Defining the parameters using CPT
+# Defining the parameters using CPT : Conditional Probability Table
 from pgmpy.factors.discrete import TabularCPD
 
 cpd_burglary = TabularCPD(
@@ -49,10 +49,17 @@ state_names={"Alarm":['yes','no'], "MaryCalls":['yes', 'no']},
 # Associating the parameters with the model structure
 alarm_model.add_cpds(
     cpd_burglary, cpd_earthquake, cpd_alarm, cpd_johncalls, cpd_marycalls)
-
+print("cpds")
+print(cpd_burglary)
+print(cpd_earthquake)
+print(cpd_alarm)
+print(cpd_johncalls)
+print(cpd_marycalls)
 alarm_infer = VariableElimination(alarm_model)
 
 print(alarm_infer.query(variables=["JohnCalls"],evidence={"Earthquake":"yes"}))
-q = alarm_infer.query(variables=["JohnCalls", "Earthquake"],evidence={"Burglary":"yes","MaryCalls":"yes"}))
+q = alarm_infer.query(variables=["JohnCalls", "Earthquake"],evidence={"Burglary":"yes","MaryCalls":"yes"})
 print(q)
+
+
 

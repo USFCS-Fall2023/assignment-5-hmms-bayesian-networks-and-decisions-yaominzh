@@ -55,6 +55,10 @@ test
 
 # Part 3 
 
+## 3.1 Modify query to determine probabilities
+[pgm_alarm.py](pgm_alarm.py)
+
+
 #  Part 4
 
 ## 4.1 What are the three dimensions along which Big Tech has an advantage in AI?

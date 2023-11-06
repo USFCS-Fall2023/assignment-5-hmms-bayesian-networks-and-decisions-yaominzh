@@ -10,7 +10,7 @@ if __name__ == '__main__':
     #- The probability of both John and Mary calling given Alarm
     print("#- The probability of both John and Mary calling given Alarm")
     P_john_and_mary_given_alarm = alarm_infer.query(
-        variables=["JohnCalls", "MaryCalls"], evidence={"Earthquake": "yes"}
+        variables=["JohnCalls", "MaryCalls"], evidence={"Alarm": "yes"}
     )
     print(P_john_and_mary_given_alarm)
 

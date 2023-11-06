@@ -1,4 +1,6 @@
 import HMM
+import carnet
+import carnet_KeyPresent
 
 def test_HMM():
     model = HMM.HMM()
@@ -10,8 +12,16 @@ def test_HMM():
     print("Loaded model: emissions")
     print(model.emissions)
 
+def test_carnet():
+    carnet.main()
+
+def test_carnet_KeyPresent():
+    carnet_KeyPresent.main()
+
 
 if __name__ == '__main__':
 
 
-    test_HMM()
+    # test_HMM()
+    #test_carnet()
+    test_carnet_KeyPresent()

@@ -124,7 +124,7 @@ At the bottom is an example of how to query the network to find the probability 
 Include each of your queries in pgm_alarm.py
 
 
-**(todo 10 points)** 2. Next, consider the carnet.py file. This contains the Bayesian netowrk represeting the car starting problem.
+**(done 10 points)** 2. Next, consider the carnet.py file. This contains the Bayesian netowrk represeting the car starting problem.
 To begin, ask the following queries:
 - Given that the car will not move, what is the probability that the battery is not working?
 - Given that the radio is not working, what is the probability that the car will not start?
@@ -134,7 +134,7 @@ we discover that the car has gas in it?
 - What is the probability that the car starts if the radio works and it has gas in it?
 Include each of your queries in carnet.py
 
-**(todo 10 points)**  3. Last, we will add an additional node to the network, called KeyPresent, that indicates whether or not we have the key for the car.
+**(done 10 points)**  3. Last, we will add an additional node to the network, called KeyPresent, that indicates whether or not we have the key for the car.
   This is a Categorical variable with two state values, yes and no. The prior for 'yes' is 0.7.
   
   KeyPresent should only affect Starts. Add an edge to starts and update the CPD to indicate that:

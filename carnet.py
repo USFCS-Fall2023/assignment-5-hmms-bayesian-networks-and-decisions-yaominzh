@@ -68,4 +68,44 @@ car_infer = VariableElimination(car_model)
 
 print(car_infer.query(variables=["Moves"],evidence={"Radio":"turns on", "Starts":"yes"}))
 
+def main():
+    # - Given that the car will not move, what is the probability that the battery is not working?
+    print("# - Given that the car will not move, what is the probability that the battery is not working?")
+    result_A = car_infer.query(variables=["Battery"], evidence={"Moves": "no"})
+    print(result_A)
 
+    # - Given that the radio is not working, what is the probability that the car will not start?
+    print("# - Given that the radio is not working, what is the probability that the car will not start?")
+    result_B = car_infer.query(variables=["Starts"], evidence={"Radio": "Doesn't turn on"})
+    print(result_B)
+
+    # - Given that the battery is working, does the probability of the radio working change if we discover that the car has gas in it?
+    print("# - Given that the battery is working, does the probability of the radio working change if we discover that the car has gas in it?")
+    result_C1 = car_infer.query(variables=["Radio"], evidence={"Battery": "Works"})
+    result_C2 = car_infer.query(variables=["Radio"], evidence={"Battery": "Works", "Gas": "Full"})
+    print(result_C1)
+    print(result_C2)
+    if result_C1 == result_C2:
+        print("No change")
+    else:
+        print("Change")
+
+    # - Given that the car doesn't move, how does the probability of the ignition failing change if we observe that the car dies not have gas in it?
+    print("# - Given that the car doesn't move, how does the probability of the ignition failing change if we observe that the car dies not have gas in it?")
+    result_D1 = car_infer.query(variables=["Ignition"], evidence={"Moves": "no"})
+    result_D2 = car_infer.query(variables=["Ignition"], evidence={"Moves": "no", "Gas": "Empty"})
+    print(result_D1)
+    print(result_D2)
+    if result_D1 == result_D2:
+        print("No change")
+    else:
+        print("Change")
+
+    # - What is the probability that the car starts if the radio works and it has gas in it?
+    print("# - What is the probability that the car starts if the radio works and it has gas in it?")
+    result_E = car_infer.query(variables=["Starts"], evidence={"Radio": "turns on", "Gas": "Full"})
+    print(result_E)
+
+
+if __name__ == '__main__':
+    main()

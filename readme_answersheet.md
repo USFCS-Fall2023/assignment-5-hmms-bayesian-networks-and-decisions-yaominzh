@@ -58,6 +58,11 @@ test
 ## 3.1 Modify query to determine probabilities
 [pgm_alarm.py](pgm_alarm.py)
 
+## 3.2 representing the car starting problem
+[carnet.py](carnet.py)
+
+## 3.3 add KeyPresent node
+[carnet_keypresent.py](carnet_keypresent.py)
 
 #  Part 4
 

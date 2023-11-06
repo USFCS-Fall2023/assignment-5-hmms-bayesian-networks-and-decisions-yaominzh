@@ -46,6 +46,14 @@ For 1.2, it got the right answer. While for this step, I fed GPT with my 1.1 ans
 
 For 1.3, at first, it just beat around the bush and didn't give a clear answer, like it just gave a long talk about Time Savings, Cost of Delay, Reliability of Satellite Data, Resource Availability. 
 
+# Part 2
+## 2.1 implement load, use two_english as a sample file
+[HMM.py](HMM.py)
+
+test
+[submission.py](submission.py)
+
+# Part 3 
 
 #  Part 4
 

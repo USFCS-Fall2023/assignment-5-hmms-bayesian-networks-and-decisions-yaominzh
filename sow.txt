@@ -65,7 +65,7 @@ The second set of .trans/.emit files are for the Brown corpus. These represent a
 The last pair of files is ambiguous_sents.obs and ambiguous_sents.tagged.obs. This is what you'll test your Viterbi implementation on.
 
 
-**(todo 5 points)**. Use the included code to implement load. Use two_english as a sample file to work with. You should be able to do:
+**(done 5 points)**. Use the included code to implement load. Use two_english as a sample file to work with. You should be able to do:
 
 model = HMM()
 model.load('two_english')

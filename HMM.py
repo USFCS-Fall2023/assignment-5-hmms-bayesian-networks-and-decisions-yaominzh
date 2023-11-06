@@ -63,29 +63,19 @@ class HMM:
         """return an n-length observation by randomly sampling from this HMM."""
         """ Generate an n-length observation sequence. """
         # Start in the initial state
-        current_state = '#'
+        cur_state = '#'
         states = []
         emissions = []
 
         for _ in range(n):
-            # Choose the next state based on the transition probabilities of the current state
-            next_state = numpy.random.choice(
-                list(self.transitions[current_state].keys()),
-                p=list(self.transitions[current_state].values())
-            )
-            # Choose an emission based on the emission probabilities of the chosen state
-            emission = numpy.random.choice(
-                list(self.emissions[next_state].keys()),
-                p=list(self.emissions[next_state].values())
-            )
+            # next_state: based on the transition probabilities of the current state
+            next_state = numpy.random.choice( list(self.transitions[cur_state].keys()), p=list(self.transitions[cur_state].values()) )
+            # emission: based on the emission probabilities of the chosen state
+            emission = numpy.random.choice( list(self.emissions[next_state].keys()), p=list(self.emissions[next_state].values()) )
             states.append(next_state)
             emissions.append(emission)
-            current_state = next_state  # Update the current state
-
-        # Create an observation with the generated states and emissions
+            cur_state = next_state
         return Observation(states, emissions)
-
-
 
     ## you do this: Implement the Viterbi alborithm. Given an Observation (a list of outputs or emissions)
     ## determine the most likely sequence of states.
@@ -95,6 +85,21 @@ class HMM:
         find and return the state sequence that generated
         the output sequence, using the Viterbi algorithm.
         """
+def test_load():
+    model = HMM()
+    model.load('two_english')
+    print("Loaded model: transitions")
+    print(model.transitions)
+    print("Loaded model: emissions")
+    print(model.emissions)
+
+    print("################################################################################")
+    print("Loading model: partofspeech.browntags.trained")
+    model.load('partofspeech.browntags.trained')
+    print("Loaded model: transitions")
+    print(model.transitions)
+    print("Loaded model: emissions")
+    print(model.emissions)
 def main():
     parser = argparse.ArgumentParser(description='HMM Command Line Interface')
 
@@ -113,20 +118,7 @@ def main():
         print(observation)
 
 if __name__ == '__main__':
-    model = HMM()
-    model.load('two_english')
-    print("Loaded model: transitions")
-    print(model.transitions)
-    print("Loaded model: emissions")
-    print(model.emissions)
 
-    print("################################################################################")
-    print("Loading model: partofspeech.browntags.trained")
-    model.load('partofspeech.browntags.trained')
-    print("Loaded model: transitions")
-    print(model.transitions)
-    print("Loaded model: emissions")
-    print(model.emissions)
     main()
 
 

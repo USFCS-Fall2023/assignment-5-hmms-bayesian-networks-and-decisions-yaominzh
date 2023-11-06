@@ -44,7 +44,7 @@ All not correct. ChatGPT came up with the solution structure of the problem, but
 
 Part 2: Hidden Markov Models
 
-todo milestones: check the code out immediately. Start on load and generate after Friday 10/25 lecture.
+milestones: check the code out immediately. Start on load and generate after Friday 10/25 lecture.
 
 complete forward by Wed 11/1. Then do Viterbi.
 (Note: this is derived from an assignment in AAAI's Model Assignments workshop)
@@ -72,7 +72,7 @@ model.load('two_english')
 
 You should store the transitions and emissions as dictionaries of dictionaries. e.g. {'#': {'C': 0.814506898514, 'V': 0.185493101486}, 'C': {'C': 0.625840873591, 'V': 0.374159126409}, 'V': {'C': 0.603126993184, 'V': 0.396873006816}}
 
-**(todo 10 points)** Implement generate. It should take an integer n, and return a random observation of length n. To generate this, start in the initial state and repeatedly select successor states at random, using the probability as a weight, and then select an emission, again using the probability as a weight. You may find either numpy.random.choice or random.choices very helpful here.
+**(done 10 points)** Implement generate. It should take an integer n, and return a random observation of length n. To generate this, start in the initial state and repeatedly select successor states at random, using the probability as a weight, and then select an emission, again using the probability as a weight. You may find either numpy.random.choice or random.choices very helpful here.
 Be sure that you are using the transition probabilities to determine the next state, and not a uniform distribution!
 
 You should be able to run it with the pre-trained probabilities for the Brown corpus, like so:

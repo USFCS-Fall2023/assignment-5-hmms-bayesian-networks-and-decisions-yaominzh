@@ -53,6 +53,11 @@ For 1.3, at first, it just beat around the bush and didn't give a clear answer, 
 test
 [submission.py](submission.py)
 
+## 2.2 implement generate
+
+[HMM.py](HMM.py)
+
+
 # Part 3 
 
 ## 3.1 Modify query to determine probabilities

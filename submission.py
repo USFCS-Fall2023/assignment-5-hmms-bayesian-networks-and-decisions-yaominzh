@@ -2,6 +2,7 @@ import HMM
 import carnet
 import carnet_KeyPresent
 
+
 def test_HMM():
     model = HMM.HMM()
     print("################################################################################")
@@ -11,6 +12,14 @@ def test_HMM():
     print(model.transitions)
     print("Loaded model: emissions")
     print(model.emissions)
+
+def test_HMM_generate():
+    model = HMM.HMM()
+    model.load("partofspeech.browntags.trained")
+    print("################################################################################")
+    print("Generating 20 observations from the model")
+    observation = model.generate(20)
+    print(observation)
 
 def test_carnet():
     carnet.main()
@@ -24,4 +33,6 @@ if __name__ == '__main__':
 
     # test_HMM()
     #test_carnet()
-    test_carnet_KeyPresent()
+    # test_carnet_KeyPresent()
+    test_HMM_generate()
+    pass

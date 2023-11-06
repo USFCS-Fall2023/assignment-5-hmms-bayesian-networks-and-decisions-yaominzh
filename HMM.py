@@ -77,6 +77,50 @@ class HMM:
             cur_state = next_state
         return Observation(states, emissions)
 
+    def forward(self, observation):
+        """
+        Set up the initial matrix M, with P=1.0 for the ‘#’ state.
+        For each state on day 1: P(state | e0) = 𝛼P(e0 | state) P(state | #)
+
+        for i = 2 to n  :
+        foreach state s:
+        sum = 0
+            for s2 in states :
+                sum += M[s2, i-1]*T[s2,s]*E[O[i],s2]
+                M[s2,i] = sum
+
+        :param observation:
+        :return:
+        """
+        states = list(self.transitions.keys())
+        states.remove('#')
+        observation = observation.split()
+        observation = observation[:-1]
+
+        T = len(observation)  # Length of the observation sequence
+        N = len(states)  # Number of states
+
+        # Initialize forward probabilities matrix M
+        M = [[0 for _ in range(N)] for _ in range(T)]
+
+        # Initialization step for t = 1
+        for s in range(N):
+            state = states[s]
+            M[0][s] = self.transitions['#'][state] * self.emissions[state].get(observation[0], 0)
+
+        # Iteration step
+        for t in range(1, T):
+            for s in range(N):
+                sum_val = 0
+                for s2 in range(N):
+                    sum_val += M[t - 1][s2] * self.transitions[states[s2]].get(states[s], 0) * self.emissions[states[s]].get(observation[t], 0)
+                M[t][s] = sum_val
+        maxv = max(M[T - 1])
+        inx = M[T - 1].index(maxv)
+        return states[inx]
+
+
+
     ## you do this: Implement the Viterbi alborithm. Given an Observation (a list of outputs or emissions)
     ## determine the most likely sequence of states.
 
@@ -100,11 +144,22 @@ def test_load():
     print(model.transitions)
     print("Loaded model: emissions")
     print(model.emissions)
+def read_observation(filename):
+    observations = []
+    with codecs.open(filename, 'r', encoding='utf-8') as f:
+        for line in f:
+            if line.strip():
+                observations.append(line.strip())
+    return observations
+
+
+
 def main():
     parser = argparse.ArgumentParser(description='HMM Command Line Interface')
 
     parser.add_argument('model_basename', type=str, help='Base name of the HMM model files')
     parser.add_argument('--generate', type=int, help='Generate a sequence of observations of the specified length')
+    parser.add_argument('--forward', type=str, help='Compute the forward probability of the specified observation')
 
     args = parser.parse_args()
 
@@ -116,6 +171,11 @@ def main():
     if args.generate:
         observation = hmm.generate(args.generate)
         print(observation)
+    if args.forward:
+        observations = read_observation(args.forward)
+        for observation in observations:
+            print(observation)
+            print("the most likely final state:", hmm.forward(observation))
 
 if __name__ == '__main__':
 

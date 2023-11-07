@@ -78,6 +78,7 @@ test
 - Geopolitical Advantage - AI companies are positioned as crucial assets in the US-China AI race
 
 ## 4.2 Why does AI Now think it's important to focus on Big Tech?
+
 AI Now focuses on Big Tech because these companies have an outsized impact on the AI ecosystem and economy more broadly. The report argues reasons as follows:
 - Tackling challenges that either originate from or are exemplified by Big Tech
   companies can address the root cause of several key concerns
@@ -101,6 +102,11 @@ content production that is deleterious to young people’s mental and physical h
 Do you agree with this assessment? How might we rethink our relationship with AI and with technology in order to avoid these potential negative outcomes?
 
 Now paste this last question into ChatGPT and include its response. How do you compare its output to your own? 
+
+
+# Reflection
+
+- In this assignment 5, we have two questions about analysing ChatGPT's output. ChatGPT is getting more and more powerful. As we evaluated in assignment 1, ChatGPT is good at  
 
 
 

@@ -108,7 +108,7 @@ class HMM:
             state = states[s]
             M[0][s] = self.transitions['#'][state] * self.emissions[state].get(observation[0], 0)
 
-        # Iteration step
+        # Iteration step for t = 2 to T
         for t in range(1, T):
             for s in range(N):
                 sum_val = 0
@@ -129,6 +129,72 @@ class HMM:
         find and return the state sequence that generated
         the output sequence, using the Viterbi algorithm.
         """
+        """
+        M[t,s] = 0
+        Backpointers[t,s] = 0 # this will keep our path to the best previous state.
+        ## set up the initial probabilities from the start state (states[0] to observation 1.
+        ## T is the transition probabilities, E is the emission probabilities, O is the vector of observations.
+        for s in state_values : 
+          M[1,s] = T[states[0], s] * E[s, O[1]]  ## the probability of that state * the probability of that state given observation 1.
+        ### 
+        for o in observations : ## for each time step
+           for s in state_values : ## for each possible hidden state
+             val = max[ M[state2, o-1] * T[state2, s]  *p(s, o) for state2 in state_values ]. 
+                ## look at the likelihood of the sequence so far, 
+                ## times T, times the likelihood of that state, given the observation.
+             M[s,o] = val
+             Backpointers[s,o] = index(val)
+        list = []
+        Best = max(M[t,:]).  #find the most likely state for time t
+        for o in observations.reverse : # work backwards through time to the initial state
+           list.push(best) 
+           best = backpointers[best, o] ## from this best state, what was the most likely state?      
+        return list
+        """
+        states = list(self.transitions.keys())
+        states.remove('#')
+        observations = observation.split()
+        T = len(observations)  # Number of time steps
+        N = len(states)  # Number of states
+
+        # Initialize the matrices
+        M = [[0 for _ in range(N)] for _ in range(T)]
+        Backpointers = [[0 for _ in range(N)] for _ in range(T)]
+
+        # Initialization step
+        for s, state in enumerate(states):
+            M[0][s] = self.transitions['#'].get(state, 0) * self.emissions[state].get(observations[0], 0)
+
+        # Iteration step
+        for t in range(1, T):
+            for s, state in enumerate(states):
+                vals = []
+                for s2 in range(N):
+                    cur = M[t - 1][s2] * self.transitions[states[s2]].get(state, 0) * self.emissions[state].get(observations[t], 0)
+                    vals.append(cur)
+                max_prob = max(vals)
+
+                M[t][s] = max_prob
+                Backpointers[t][s] = vals.index(max_prob)
+
+        # Termination step to find the last state
+        best_last_state = max(range(N), key=lambda s: M[T-1][s])
+        best_path_prob = M[T-1][best_last_state]
+
+        # Backtracking to find the best path
+        best_path = [best_last_state]
+        for t in range(T-1, 0, -1):
+            best_path.insert(0, Backpointers[t][best_path[0]])
+
+        # Convert state indices to state names
+        best_state_sequence = [states[state_index] for state_index in best_path]
+
+        return best_state_sequence
+
+
+
+
+
 def test_load():
     model = HMM()
     model.load('two_english')
@@ -155,27 +221,36 @@ def read_observation(filename):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='HMM Command Line Interface')
-
+    parser = argparse.ArgumentParser()
     parser.add_argument('model_basename', type=str, help='Base name of the HMM model files')
     parser.add_argument('--generate', type=int, help='Generate a sequence of observations of the specified length')
-    parser.add_argument('--forward', type=str, help='Compute the forward probability of the specified observation')
+    parser.add_argument('--forward', type=str, help='Compute the forward probability of an observation')
+    parser.add_argument('--viterbi', type=str, help='Compute the Viterbi path for an observation')
+
 
     args = parser.parse_args()
 
-    # Instantiate and load the model
     hmm = HMM()
     hmm.load(args.model_basename)
 
-    # Check if we should generate a sequence
     if args.generate:
         observation = hmm.generate(args.generate)
         print(observation)
+
     if args.forward:
         observations = read_observation(args.forward)
         for observation in observations:
-            print(observation)
+            print(f"Observation: {observation}")
             print("the most likely final state:", hmm.forward(observation))
+
+    if args.viterbi:
+        observations = read_observation(args.viterbi)
+        for observation in observations:
+            state_sequence = hmm.viterbi(observation)
+            # print(f"Observation: {observation}")
+            # print(f"State sequence: {' '.join(state_sequence)}")
+            print(' '.join(state_sequence))
+            print(observation)
 
 if __name__ == '__main__':
 

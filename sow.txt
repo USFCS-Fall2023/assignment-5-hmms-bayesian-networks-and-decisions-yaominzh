@@ -92,12 +92,12 @@ DET NOUN ADP NOUN CONJ DET VERB DET NOUN NOUN NOUN ADP DET NOUN
 whose light for wall and the learned the hull postmaster trash in his peters
 
 
-**(todo 10 points)** Next, implement the forward algorithm. This tells us, for a sequence of observations, the most likely
+**(done 10 points)** Next, implement the forward algorithm. This tells us, for a sequence of observations, the most likely
 final state. You should be able to run this like so:
 
 python hmm.py partofspeech.browntags.trained --forward ambiguous_sents.obs
 
-**(todo 15 points)** Next, implement Viterbi. This tells us, for a sequence of observations, the most likely sequence of states. You should be able to run this like so:
+**(done 15 points)** Next, implement Viterbi. This tells us, for a sequence of observations, the most likely sequence of states. You should be able to run this like so:
 
 python hmm.py partofspeech.browntags.trained --viterbi ambiguous_sents.obs
 
@@ -109,7 +109,7 @@ You can compare your results to ambiguous_sents.tagged.obs.
 
 Problem 3: Belief networks. 
 
-todo milestones. Get pgmpy set up right away. Complete by Wed 11/1.
+milestones. Get pgmpy set up right away. Complete by Wed 11/1.
 
 
 For this problem, you'll be using the [pgmpy](https://pgmpy.org/) library for probabilistic inference. To begin, you'll want to install this.

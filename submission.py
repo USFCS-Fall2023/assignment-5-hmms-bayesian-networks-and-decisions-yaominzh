@@ -21,6 +21,24 @@ def test_HMM_generate():
     observation = model.generate(20)
     print(observation)
 
+def test_HMM_forward():
+    model = HMM.HMM()
+    model.load("partofspeech.browntags.trained")
+    print("################################################################################")
+    observations = HMM.read_observation("ambiguous_sents.obs")
+    for observation in observations:
+        print(f"Observation: {observation}")
+        print("the most likely final state:", model.forward(observation))
+
+def test_HMM_viterbi():
+    model = HMM.HMM()
+    model.load("partofspeech.browntags.trained")
+    print("################################################################################")
+    observations = HMM.read_observation("ambiguous_sents.obs")
+    for observation in observations:
+        state_sequence = model.viterbi(observation)
+        print(' '.join(state_sequence))
+        print(observation)
 def test_carnet():
     carnet.main()
 
@@ -31,8 +49,10 @@ def test_carnet_KeyPresent():
 if __name__ == '__main__':
 
 
-    # test_HMM()
-    #test_carnet()
-    # test_carnet_KeyPresent()
+    test_HMM()
+    test_carnet()
+    test_carnet_KeyPresent()
     test_HMM_generate()
+    test_HMM_forward()
+    test_HMM_viterbi()
     pass

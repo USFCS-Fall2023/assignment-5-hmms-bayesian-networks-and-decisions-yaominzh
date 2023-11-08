@@ -87,10 +87,23 @@ AI Now focuses on Big Tech because these companies have an outsized impact on th
 
 ## 4.3  Priority 1 discusses Algorithmic Accountability. What does this mean? Why is it important to shift responsibility for detecting harm on companies themselves?
 AINow has another section for Algorithmic Accountability.(https://ainowinstitute.org/publication/algorithmic-accountability)
+Algorithmic accountability refers to the growing policy focus on requiring transparency, auditing, and access to data from tech companies as a way to address harms caused by AI systems.
+This is important because the current approach plays into the tech industry's interests by keeping accountability outside  the company. It allows companies to position themselves as cooperating through audits while avoiding fundamental changes.
 
-- What are the windows for action that are identified? Which do you personally think are the most effective or promising?
+## 4.4 What are the windows for action that are identified? Which do you personally think are the most effective or promising?
 
-- The executive summary contains this quote:
+In the "Windows for policy movement" section, the windows for action are identified as follows:
+ - Contain tech firms' data advantage
+ - Build support for competition reforms as a key lever to reduce concentration in tech
+ - Regulate ChatGPT and other large-scale models.
+ - Displace audits as the primary policy response to harmful AI.
+ - Future-proof against the quiet expansion of biometric surveillance into new domains like cars
+ - Enact strong curbs on worker surveillance. 
+ - Prevent “international preemption” by digital trade agreements that can be used to weaken national regulation on algorithmic accountability and competition policy
+
+I think the most effective is building support for competition reforms and enacting strong curbs on worker surveillance. Competition reform can address the root cause of concentration of power and data advantages that many problems stem from. Curbing worker surveillance not only protects workers directly, but could force changes in business models and systems built around extensive monitoring and control.
+
+## 4.5 The executive summary contains this quote:
 
 "These are only a handful of examples, and what they make clear is that there is nothing about
 artificial intelligence that is inevitable. Only once we stop seeing AI as synonymous with progress
@@ -101,12 +114,33 @@ content production that is deleterious to young people’s mental and physical h
 
 Do you agree with this assessment? How might we rethink our relationship with AI and with technology in order to avoid these potential negative outcomes?
 
-Now paste this last question into ChatGPT and include its response. How do you compare its output to your own? 
+I agree with this assessment. In my view, there are a few ways we could rethink the relationship with AI and technology to avoid potential negative outcomes. Keeping human rights, ethics, and wellbeing as the focus for AI rather than efficiency or profit would steer development toward more responsible use cases. Laws and norms reinforcing those values are important. Applying AI in sensitive social domains like healthcare, law enforcement, etc. requires extremely careful evaluation to avoid automating and exacerbating existing biases or inequities. Slow, thoughtful adoption is prudent.
 
+## 4.6 Now paste this last question into ChatGPT and include its response. How do you compare its output to your own? 
+ChatGPT's reply is as following. I think it covers more area. And it can be a good strcture to do further exploration on this topic. 
+
+ChatGPT:
+The assessment touches on important concerns regarding the impact of AI on society, and many experts in the field share similar thoughts. The statement underscores the belief that AI development should not be driven solely by technical progress without consideration of social, economic, and political implications. Here are some reflections on this viewpoint:
+
+1. **AI as a Tool, Not an Inevitability**: Treating AI as an inevitable force can lead to passivity and fatalism about its direction and effects. Instead, recognizing AI as a tool created and controlled by humans can empower society to steer its development in ways that align with broader social values and interests.
+
+2. **Democratic Oversight**: There's growing advocacy for the democratic governance of AI, which includes establishing mechanisms through which the public can exert control over how AI is developed and deployed. This could involve more transparent AI policymaking processes and public consultations.
+
+3. **Regulation and Legislation**: New laws and regulations could be developed to ensure that AI systems are fair, transparent, and accountable. This includes addressing issues of algorithmic bias, privacy, and the potential misuse of AI.
+
+4. **Ethical AI Development**: Encouraging the integration of ethical considerations into AI research and development from the outset can help to mitigate potential harms. This might involve multidisciplinary teams that include ethicists and social scientists working alongside engineers and developers.
+
+5. **Education and Awareness**: Increasing public understanding of AI technologies can help individuals better navigate and engage with these systems. This also includes education aimed at developers and users about the potential biases and limitations of AI.
+
+6. **Economic Equity**: Addressing how AI may impact job markets and economic disparities is crucial. This could involve rethinking social safety nets and considering policies like retraining programs, universal basic income, or adjustments to education to prepare workers for a changing economy.
+
+7. **Promoting Beneficial Uses**: Focusing AI development on areas that have clear public benefits, such as healthcare, climate change mitigation, and education, can help align its trajectory with the public interest.
+
+By actively shaping AI's development, deployment, and governance, society can work to ensure that AI technologies are used in ways that are beneficial and do not exacerbate inequality or harm well-being. This requires collaborative effort from policymakers, technologists, civil society, and the public.
 
 # Reflection
+- As talked in piazza,(https://piazza.com/class/lldwv8sf2g57pl/post/100), the values in TabularCPD from alarm.py are not fully matching the Burglary example. But the main idea for the assignment is to work on conditions and probabilities, so I think it is fine. 
 
-- In this assignment 5, we have two questions about analysing ChatGPT's output. ChatGPT is getting more and more powerful. As we evaluated in assignment 1, ChatGPT is good at  
 
 
 

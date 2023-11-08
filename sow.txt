@@ -150,7 +150,7 @@ P(starts | !gas, !ignition, !keyPresent) = 0.01
 </pre>
   
 
-**(todo Problem 4 - grad students only)**
+**(done Problem 4 - grad students only)**
 
 todo milestone - complete by 11/3
 
